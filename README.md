@@ -16,7 +16,7 @@ https://github.com/persteenolsen/webpack-5-vue-boilerplate
 yarn
 ```
 
-## deployment
+## Deployment
 
 ### local
 
