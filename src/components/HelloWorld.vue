@@ -92,6 +92,9 @@ export default {
 	props: {
 		msg: String,
 	},
+	setup(props) {
+		console.log(props);
+	},
 };
 </script>
 
