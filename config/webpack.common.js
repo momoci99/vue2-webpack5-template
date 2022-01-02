@@ -8,11 +8,12 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
   // Where webpack looks to start building the bundle
-  entry: [paths.src + "/main.js"],
+  entry: [paths.src + "/main.ts"],
 
   resolve: {
-    extensions: [".js", ".vue"],
+    extensions: [".js", ".vue", ".tsx", ".ts"],
     alias: {
+      "@": path.resolve(__dirname, "src/"),
       components: path.resolve(__dirname, "../src/components/"),
       images: path.resolve(__dirname, "../src/images/"),
       styles: path.resolve(__dirname, "../src/styles/"),
@@ -50,6 +51,19 @@ module.exports = {
       // JavaScript: Use Babel to transpile JavaScript files
       { test: /\.vue$/, loader: "vue-loader" },
       { test: /\.js$/, exclude: /node_modules/, use: ["babel-loader"] },
+
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader",
+            options: {
+              appendTsSuffixTo: [/\.vue$/],
+            },
+          },
+        ],
+      },
 
       // Styles: Inject CSS into the head with source maps
       {
