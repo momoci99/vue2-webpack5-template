@@ -8,6 +8,10 @@ Use newest webpack5 and loaders
 
 https://github.com/persteenolsen/webpack-5-vue-boilerplate
 
+## Other templates
+
+1.  [vue2+webpack5+composition-api](https://github.com/momoci99/vue2-webpack5-template/tree/composition-api)
+
 # Usage
 
 ## Install
